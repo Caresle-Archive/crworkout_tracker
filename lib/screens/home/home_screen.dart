@@ -1,5 +1,5 @@
+import 'package:crworkout_tracker/widgets/side_menu.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -7,13 +7,16 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SizedBox(
+      appBar: AppBar(
+        title: const Text('CRWorkout'),
+      ),
+      drawer: const SideMenu(),
+      body: const SizedBox(
         width: double.infinity,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Test'),
-            ElevatedButton(onPressed: () => context.pushNamed('settings'), child: const Text('data')),
+            Text('Test'),
           ],
         ),
       ),
