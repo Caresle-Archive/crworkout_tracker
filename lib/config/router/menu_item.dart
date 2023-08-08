@@ -30,6 +30,30 @@ const appMenuItems = <MenuItem>[
     widgetPage: HomeScreen()
   ),
   MenuItem(
+    name: 'Workouts',
+    path: '/workouts',
+    icon: Icons.web_stories_sharp,
+    widgetPage: WorkoutsScreen()
+  ),
+  MenuItem(
+    name: 'Weight',
+    path: '/weight',
+    icon: Icons.monitor_weight_rounded,
+    widgetPage: WeightScreen()
+  ),
+  MenuItem(
+    name: 'login',
+    path: '/login',
+    icon: Icons.account_circle_rounded,
+    widgetPage: LoginScreen()
+  ),
+  MenuItem(
+    name: 'Record',
+    path: '/record',
+    icon: Icons.data_exploration_rounded,
+    widgetPage: RecordScreen()
+  ),
+  MenuItem(
     name: 'settings',
     path: '/settings',
     icon: Icons.settings,
