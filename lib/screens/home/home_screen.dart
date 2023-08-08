@@ -6,11 +6,13 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final scaffoldKey = GlobalKey<ScaffoldState>();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('CRWorkout'),
       ),
-      drawer: const SideMenu(),
+      drawer: SideMenu(scaffoldKey: scaffoldKey,),
       body: const SizedBox(
         width: double.infinity,
         child: Column(

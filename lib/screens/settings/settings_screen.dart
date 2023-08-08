@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -7,12 +6,14 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SizedBox(
+      appBar: AppBar(
+        title: const Text('Settings'),
+      ),
+      body: const SizedBox(
         width: double.infinity,
         child: Column(
           children: [
-            const Text('Hello'),
-            FilledButton(onPressed: () => context.pushNamed('home'), child: const Icon(Icons.add))
+            Text('Hello'),
           ],
         ),
       ),
