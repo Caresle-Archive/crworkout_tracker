@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'CR Workout Tracker',
-      theme: AppTheme(selectedColor: 0).getTheme(),
+      theme: AppTheme(selectedColor: 2).getTheme(),
       debugShowCheckedModeBanner: false,
       routerConfig: appRouter,
     );
