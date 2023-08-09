@@ -7,7 +7,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
-    
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -19,9 +19,8 @@ class LoginScreen extends StatelessWidget {
               Card(
                 color: colors.onInverseSurface,
                 child: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: _CardContent(colors: colors)
-                ),
+                    padding: const EdgeInsets.all(20),
+                    child: _CardContent(colors: colors)),
               ),
             ],
           ),
@@ -38,41 +37,58 @@ class _CardContent extends StatelessWidget {
 
   final ColorScheme colors;
 
-  InputDecoration inputDecoration(String text, IconData icon) => InputDecoration(
-    border: const OutlineInputBorder(),
-    hintText: text,
-    suffixIcon: Icon(icon),
-  );
+  InputDecoration inputDecoration(String text, IconData icon) =>
+      InputDecoration(
+        border: const OutlineInputBorder(),
+        hintText: text,
+        suffixIcon: Icon(icon),
+      );
 
   TextStyle textStyle() => const TextStyle(
-    fontSize: 32,
-    fontStyle: FontStyle.italic,
-    fontWeight: FontWeight.bold,
-  );
+        fontSize: 32,
+        fontStyle: FontStyle.italic,
+        fontWeight: FontWeight.bold,
+      );
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         // Title
-        Text('CR WORKOUT', style: textStyle(),),
-        const SizedBox(height: 20,),
+        Text(
+          'CR WORKOUT',
+          style: textStyle(),
+        ),
+        const SizedBox(
+          height: 20,
+        ),
 
         // Circle
         _CustomCirclePicture(colors: colors),
-        const SizedBox(height: 20,),
+        const SizedBox(
+          height: 20,
+        ),
 
         // Form
         TextFormField(
           decoration: inputDecoration('Username', Icons.account_circle_rounded),
         ),
-        const SizedBox(height: 30,),
+        const SizedBox(
+          height: 30,
+        ),
+
+        // Password field
         TextFormField(
           obscureText: true,
-          decoration: inputDecoration('Password', Icons.remove_red_eye_rounded),
-          
+          decoration: inputDecoration('Password', Icons.remove_red_eye_rounded)
+              .copyWith(
+                  suffixIcon: IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.remove_red_eye_rounded))),
         ),
-        const SizedBox(height: 30,),
+        const SizedBox(
+          height: 30,
+        ),
         const LoginButton(),
       ],
     );
@@ -92,9 +108,8 @@ class _CustomCirclePicture extends StatelessWidget {
       width: 128,
       height: 128,
       decoration: BoxDecoration(
-        color: colors.inverseSurface,
-        borderRadius: BorderRadius.circular(90)
-      ),
+          color: colors.inverseSurface,
+          borderRadius: BorderRadius.circular(90)),
     );
   }
 }
