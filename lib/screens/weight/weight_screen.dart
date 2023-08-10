@@ -1,4 +1,8 @@
+import 'package:crworkout_tracker/screens/weight/add_weight.dart';
+import 'package:crworkout_tracker/screens/weight/weight_table.dart';
+import 'package:crworkout_tracker/screens/weight/weight_target.dart';
 import 'package:flutter/material.dart';
+
 
 class WeightScreen extends StatelessWidget {
   const WeightScreen({super.key});
@@ -7,7 +11,7 @@ class WeightScreen extends StatelessWidget {
     final colors = Theme.of(context).colorScheme;
     showModalBottomSheet(
       context: context,
-      builder: (context) => _AddWeight(colors: colors),
+      builder: (context) => AddWeight(colors: colors),
     );
   }
 
@@ -17,61 +21,21 @@ class WeightScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Weight'),
       ),
-      body: const Text('Weight'),
+      body: const SingleChildScrollView(
+        child: Column(
+          children: [
+            WeightTarget(),
+            SizedBox(height: 20,),
+            WeightTable()
+          ],
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           openDialog(context);
         },
         shape: const CircleBorder(),
         child: const Icon(Icons.add_outlined),
-      ),
-    );
-  }
-}
-
-class _AddWeight extends StatelessWidget {
-  const _AddWeight({
-    required this.colors,
-  });
-
-  final ColorScheme colors;
-
-  @override
-  Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width - 40;
-    
-    return Container(
-      height: MediaQuery.of(context).size.height / 1.5,
-      decoration: BoxDecoration(
-        borderRadius: const BorderRadius.only(topLeft: Radius.circular(30), topRight: Radius.circular(30)),
-        color: colors.onInverseSurface
-      ),
-      child: Center(
-        child: Column(
-          children: [
-            const SizedBox( height: 20,),
-            const Text('New Weight'),
-            const SizedBox( height: 20,),
-            SizedBox(
-              width: width,
-              child: TextFormField(
-                keyboardType: TextInputType.number,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Weight'
-                ),
-              ),
-            ),
-            const SizedBox( height: 20,),
-            SizedBox(
-              width: width,
-              child: FilledButton(
-                onPressed: () {},
-                child: const Text('Add Weight')
-              )
-            )
-          ]
-        ),
       ),
     );
   }
