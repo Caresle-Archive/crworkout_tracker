@@ -23,6 +23,8 @@ class WeightScreen extends StatelessWidget {
       ),
       body: const SingleChildScrollView(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             WeightTarget(),
             SizedBox(height: 20,),
