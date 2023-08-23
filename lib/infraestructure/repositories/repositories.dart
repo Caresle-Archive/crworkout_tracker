@@ -1,0 +1,1 @@
+export 'sqlite/weight_sqlite_repository.dart';
