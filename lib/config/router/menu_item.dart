@@ -1,4 +1,4 @@
-import 'package:crworkout_tracker/screens/screens.dart';
+import 'package:crworkout_tracker/presentation/screens/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
