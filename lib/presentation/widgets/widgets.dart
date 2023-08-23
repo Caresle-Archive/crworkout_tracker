@@ -1,0 +1,1 @@
+export 'shared/side_menu.dart';

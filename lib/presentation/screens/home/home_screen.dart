@@ -1,4 +1,4 @@
-import 'package:crworkout_tracker/presentation/widgets/side_menu.dart';
+import 'package:crworkout_tracker/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
