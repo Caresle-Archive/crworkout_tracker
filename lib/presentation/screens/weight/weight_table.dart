@@ -7,13 +7,19 @@ class WeightTable extends StatelessWidget {
     return columns.map((e) => DataColumn(label: Text(e))).toList();
   }
 
-  List<DataRow> generateItemRow(List<String> values) {
-    return values.map((e) => const DataRow(cells: <DataCell>[
-        DataCell(Text('e')),
-        DataCell(Text('e2')),
-      ]
+  List<DataRow> generateItemRow(List<Map<String, dynamic>> values) {
+    return values.map((e) => DataRow(
+      cells: generateItemCells(e),
     )).toList();
   }
+
+  List<DataCell> generateItemCells(Map<String, dynamic> value) {
+    return <DataCell>[
+      DataCell(Text('${value['date']}')),
+      DataCell(Text('${value['weight']}')),
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -22,7 +28,7 @@ class WeightTable extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: DataTable(
           columns: generateWeightColumns(['Date', 'Weight 2']),
-          rows: generateItemRow(['one', 'two'])
+          rows: generateItemRow([{ 'date': 1, 'weight': 64}, { 'date': 1, 'weight': 64}])
         ),
       ),
     );
